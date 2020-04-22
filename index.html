@@ -4,7 +4,6 @@
 <head>
     <title>Pantau Corona</title>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Lato: 100,300,400,700|Luckiest+Guy|Oxygen:300,400" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -28,14 +27,19 @@
     <div class="main-data">
     </div>
     <div class="sub-data" style="display: none;">
-        <div class="title-container"><h2 class="title"></h2></div>
+        <div class="title-container">
+            <h2 class="title"></h2>
+        </div>
+        <div class="sub-data-animation">
+            <div class="loader"></div>
+        </div>        
     </div>
     <div class="table-data">
         <h2 class="title">Data Kasus Covid-19 di Provinsi Indonesia</h2>
         <table border="1px" style="font-size: 1.5vw;">
             <thead align="center">
                 <th style="padding: .5vw 2vw;">No</th>
-                <th style="padding: .5vw 12vw;">Provinsi</th>
+                <th style="padding: .5vw 11.5vw;">Provinsi</th>
                 <th style="padding: .5vw 5vw;">Positif</th>
                 <th style="padding: .5vw 5vw;">Sembuh</th>
                 <th style="padding: .5vw 5vw;">Meninggal</th>
@@ -47,6 +51,10 @@
     </div>
 </div>
 <div class="footer"></div>
+<div class="loading-animation">
+    <div class="loader"></div>
+    <p>Mohon Tunggu Beberapa Saat</p>
+</div>
 
 <script src="script.js"></script>
 </body>

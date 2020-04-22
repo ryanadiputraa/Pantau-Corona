@@ -1,35 +1,53 @@
 // Global Data fecth
 
+const globalLoading = document.querySelector('.loading-animation');
+const table = document.querySelector('.table-data table');
+startLoadingAnimation(globalLoading);
+
 (async function getGLobalData() {
-    const globalPositif = await getGlobalPositif();
-    const globalRecovered = await getGlobalRecovered();
-    const globalDeaths = await getGlobalDeaths();
-    const indoCase = await getIndoCase();
-    updateUIGlobal(globalPositif, globalRecovered, globalDeaths, indoCase);
+    try {
+        const globalPositif = await getGlobalPositif();
+        const globalRecovered = await getGlobalRecovered();
+        const globalDeaths = await getGlobalDeaths();
+        const indoCase = await getIndoCase();
+        const indoData = await getProvData();
+        updateIndoData(indoData);
+        updateUIGlobal(globalPositif, globalRecovered, globalDeaths, indoCase);
+        startLoadingAnimation(globalLoading);
+        table.style.display = 'table';
+    } catch(err) {
+        startLoadingAnimation(globalLoading);
+        alert(err);
+        console.log(err);
+    }
 })();
 
-// Table Data fetch
-
-(async function getIndoData() {
-    const indoData = await getProvData();
-    updateIndoData(indoData);    
-})();
 
 // Sub Data fetch
+
+const subLoad = document.querySelector('.sub-data-animation');
 const selectWilayah = document.querySelector('#wilayah');
 selectWilayah.addEventListener('change', async function(e) {
     let provinsi = e.target.value;
     const subDataContainer = document.querySelector('.sub-data');
-
+    
+    startLoadingAnimation(subLoad);
+    
     // Indo fecth
     if(provinsi == 'Indonesia') {
         subDataContainer.style.display = 'none'
-    } else if(provinsi == 'Sulawesi Tengah') {
-        subDataContainer.style.display = 'flex'
-        const subDataTitle = document.querySelector('.sub-data .title');
-        subDataTitle.innerHTML = `Data Kasus Covid-19 di Provinsi ${provinsi}`
-        const provData = await getSulteng();
-        updateSubData(provData);
+    } 
+    // Sulteng fecth
+    else if(provinsi == 'Sulawesi Tengah') {
+        try{
+            subDataContainer.style.display = 'flex'
+            const subDataTitle = document.querySelector('.sub-data .title');
+            subDataTitle.innerHTML = `Data Kasus Covid-19 di Provinsi ${provinsi}`
+            const provData = await getSulteng();
+            updateSubData(provData);
+        } catch(err) {
+            alert(err);
+        }
     }
 });
 
@@ -38,6 +56,10 @@ selectWilayah.addEventListener('change', async function(e) {
 
 
 // All function
+
+function startLoadingAnimation(loadingContainer) {
+    loadingContainer.classList.toggle('show');
+}
 
 // Global Data
 function getGlobalPositif(){
@@ -124,14 +146,17 @@ function updateIndoData(indoData) {
 function getSulteng() {
     return fetch('https://cors-anywhere.herokuapp.com/https://banuacoders.com/api/pico/kabupaten')
     .then(response => response.json())
-    .then(response => response.data);
+    .then(response => {
+        startLoadingAnimation(subLoad);
+        return response.data
+    });
 }
 
 
 // update Sub Data
 function updateSubData(provData) {
     let provCards = '';
-    for(let i = 0; i < provData.length; i++) {
+    for(let i = (provData.length - 1); i >= 0; i--) {
         provCards += `<div class="cards prov-cards">
                         <div class= "data-title"><h4>${provData[i].kabupaten}</h4></div>
                         <div class="data"><p>Positif : <strong>${provData[i].positif}</strong></p></div>
@@ -143,6 +168,7 @@ function updateSubData(provData) {
     }
     const subDataContainer = document.querySelector('.sub-data');
     subDataContainer.innerHTML += provCards;
+    
 }
 
 
