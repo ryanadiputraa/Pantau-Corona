@@ -25,7 +25,9 @@ let loading = 0;
         startLoadingAnimation(globalLoading);
         alert(err);
         const body = document.querySelector('.container');
+        const errorPage = document.querySelector('.error-page');
         body.style.display = 'none';
+        errorPage.style.display = 'block';
     }
 })();
 
@@ -57,6 +59,10 @@ selectWilayah.addEventListener('change', async function(e) {
             updateSubData(provData);
         } catch(err) {
             alert(err);
+            const body = document.querySelector('.container');
+            const errorPage = document.querySelector('.error-page');
+            body.style.display = 'none';
+            errorPage.style.display = 'block';
         }
     }
 });
@@ -116,7 +122,7 @@ function updateUIGlobal(positif, recoverd, deaths, indo) {
                                 <p>Sembuh : <strong>${indo.recovered.value}</strong></p>
                                 <p>Meninggal : <strong>${indo.deaths.value}</strong></p>
                             </div>
-                        </div>`
+                        </div>` 
     const mainData = document.querySelector('.main-data');
     mainData.innerHTML = globalData;
     return loading += 1;
@@ -147,7 +153,7 @@ function updateIndoData(indoData) {
                     </tr>`
     }
 
-    const tableBody = document.querySelector('.table-data table tbody');
+    const tableBody = document.querySelector('.table-data .table table tbody');
     tableBody.innerHTML = tableData;
     return loading += 1;
 }
