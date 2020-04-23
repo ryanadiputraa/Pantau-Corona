@@ -3,22 +3,29 @@
 const globalLoading = document.querySelector('.loading-animation');
 const table = document.querySelector('.table-data table');
 startLoadingAnimation(globalLoading);
+let loading = 0;
 
 (async function getGLobalData() {
     try {
+        // fecthing
         const globalPositif = await getGlobalPositif();
         const globalRecovered = await getGlobalRecovered();
         const globalDeaths = await getGlobalDeaths();
         const indoCase = await getIndoCase();
         const indoData = await getProvData();
+        // updateUI
         updateIndoData(indoData);
         updateUIGlobal(globalPositif, globalRecovered, globalDeaths, indoCase);
-        startLoadingAnimation(globalLoading);
-        table.style.display = 'table';
+        // finish
+        if(loading == 2) {
+            startLoadingAnimation(globalLoading);
+            table.style.display = 'table';
+        }
     } catch(err) {
         startLoadingAnimation(globalLoading);
         alert(err);
-        console.log(err);
+        const body = document.querySelector('.container');
+        body.style.display = 'none';
     }
 })();
 
@@ -30,7 +37,10 @@ const selectWilayah = document.querySelector('#wilayah');
 selectWilayah.addEventListener('change', async function(e) {
     let provinsi = e.target.value;
     const subDataContainer = document.querySelector('.sub-data');
-    
+
+    if(innerWidth < 760 && provinsi != "Indonesia") {
+        window.scrollTo(0, 350);
+    }
     startLoadingAnimation(subLoad);
     
     // Indo fecth
@@ -109,6 +119,7 @@ function updateUIGlobal(positif, recoverd, deaths, indo) {
                         </div>`
     const mainData = document.querySelector('.main-data');
     mainData.innerHTML = globalData;
+    return loading += 1;
 }
 
 
@@ -138,6 +149,7 @@ function updateIndoData(indoData) {
 
     const tableBody = document.querySelector('.table-data table tbody');
     tableBody.innerHTML = tableData;
+    return loading += 1;
 }
 
 // Sub Data
@@ -166,7 +178,7 @@ function updateSubData(provData) {
                         <div class="data"><p>PDP : <strong>${provData[i].dalam_pengawasan}</strong></p></div>
                     </div>`            
     }
-    const subDataContainer = document.querySelector('.sub-data');
+    const subDataContainer = document.querySelector('.sub-data .sub-data-container');
     subDataContainer.innerHTML += provCards;
     
 }
