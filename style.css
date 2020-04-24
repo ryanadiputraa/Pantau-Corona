@@ -176,11 +176,18 @@ a {
 
 /* TABLE DATA */
 
-.table-data table tbody td {
-    padding: .5vw;
+.table-data .table table{
+    display: none;
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.table-data table {
+.table-data table th,
+.table-data table td {
+    padding: 0.5vw;
+}
+
+.mobile-table table thead {
     display: none;
 }
 
@@ -308,13 +315,21 @@ body .show {
         margin: 2vw 0;
     }
 
+    .mobile-table table thead {
+        display: table;
+        position: relative;
+        top: 6vw;
+        background-color: #222;
+        color: #fff;
+        margin-left: -.8vw;
+    }
+
     .table-data table th,
     .table-data table td{
-        font-size: 16px;
+        font-size: 3.7vw;
     }
 
     .table-data .table {
-        margin: 1vw;
         height: 100vw;
         overflow: scroll;
     }

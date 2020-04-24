@@ -1,7 +1,7 @@
 // Global Data fecth
 
 const globalLoading = document.querySelector('.loading-animation');
-const table = document.querySelector('.table-data table');
+const table = document.querySelector('.table-data .table table');
 startLoadingAnimation(globalLoading);
 let loading = 0;
 
