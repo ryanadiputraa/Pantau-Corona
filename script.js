@@ -43,7 +43,6 @@ selectWilayah.addEventListener('change', async function(e) {
     if(innerWidth < 760 && provinsi != "Indonesia") {
         window.scrollTo(0, 350);
     }
-    startLoadingAnimation(subLoad);
     
     // Indo fecth
     if(provinsi == 'Indonesia') {
@@ -52,6 +51,7 @@ selectWilayah.addEventListener('change', async function(e) {
     // Sulteng fecth
     else if(provinsi == 'Sulawesi Tengah') {
         try{
+            startLoadingAnimation(subLoad);
             subDataContainer.style.display = 'flex'
             const subDataTitle = document.querySelector('.sub-data .title');
             subDataTitle.innerHTML = `Data Kasus Covid-19 di Provinsi ${provinsi}`
