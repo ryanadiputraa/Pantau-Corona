@@ -4,6 +4,10 @@
     font-family: sans-serif;
 }
 
+body {
+    background-color: #f1f1f9;
+}
+
 a {
     text-decoration: none;
 }
@@ -24,39 +28,22 @@ a {
     font-size: 16px;
     position: fixed;
     width: 100%;
-    height: 3vw;
+    height: 22px;
+    padding: 10px 70px;
     color: #f5f5f5;
     background-color: #222;
-    display: flex;
-    justify-content: space-around;
 }
 
-.select-wilayah, .toolbar {
-    width: 28vw;
-    padding: 1vw;
-    display: flex;
-    justify-content: space-between;
+.navigation h4 {
+    display: inline-block;
+    margin-right: 40px;
 }
 
 #wilayah {
-    font-size: 1.2vw;
-    margin-top: -.3vw;
+    font-size: 1em;
+    padding: 2px;
     height: 24px;
     width: 250px;
-}
-
-.toolbar {
-    width: 8vw;
-}
-
-.toolbar a {
-    margin-top: -2vw;
-    color: #fafafa;
-    padding: 2vw 1vw;
-}
-
-.toolbar a:hover {
-    background-color: #ccc;
 }
 
 /* CONTAINER */
@@ -66,8 +53,7 @@ a {
 }
 
 .container {
-    padding: 5vw;
-    background-color: #f1f1f9;
+    padding: 60px 20px;
     display: flex;
     flex-direction: column; 
     justify-content: space-between;
@@ -88,6 +74,7 @@ a {
     display: flex;
     justify-content: space-between;
     padding-bottom: 5vw;
+    width: 92%;
 }
 
 .cards {
@@ -117,7 +104,7 @@ a {
 }
 
 .globalPositif {
-    background-color: #55f;
+    background-color: #22f;
 }
 
 .globalRecovered {
@@ -140,6 +127,7 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+    width: 92%;
 }
 
 .sub-data .title-container {
@@ -176,6 +164,10 @@ a {
 
 /* TABLE DATA */
 
+.table-data {
+    width: 92%;
+}
+
 .table-data .table table{
     display: none;
     width: 100%;
@@ -198,13 +190,15 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 0;
+    font-size: 12px;
+    line-height: 20px;
+    height: 60px;
     width: 100%;
     padding: 0;
     background-color: #222;
     color: #fff;
-    line-height: 2vw;
-    font-size: 12px;
-    height: 10vw;
 }
 
 
@@ -266,40 +260,37 @@ body .show {
 
   /* MEDIA QUERY */
 
-@media(max-width : 770px) {
-
-    
-    .top-source {
-        position: relative;
-        top: 182.5vw;
-    }
+@media(max-width: 768px) {
 
     .navigation {
-        font-size: 3.5vw;
-        height: 10vw;
-        padding-top: 2.2vw;
-    }
-
-    .select-wilayah {
-        width: 60vw;
-    }
-
-    #wilayah {
-        font-size: 3.5vw;
-        width: 35vw;
-        height: 6vw;
-    }
-
-    .toolbar {
-        width: 20vw;
-    }
-
-    .toolbar a {
-        border-radius: 1vw;
+      padding: 10px 10px;
     }
 
     .container {
-        padding-top: 15vw;
+      padding: 50px 16px;
+    }
+
+}
+
+@media(max-width : 420px) {
+
+    .navigation {
+        font-size: 1.2em;
+        padding: 10px 22px;
+    }
+
+    .navigation h4 {
+      margin-right: 5px;
+    }
+
+    #wilayah {
+        font-size: 1em;
+        width: 160px;
+        padding: 0;
+    }
+
+    .container {
+        padding: 50px 14px;
     }
 
     .main-data {
@@ -321,7 +312,7 @@ body .show {
         top: 6vw;
         background-color: #222;
         color: #fff;
-        margin-left: -.8vw;
+        margin-left: -2px;
     }
 
     .table-data table th,
@@ -349,15 +340,9 @@ body .show {
         margin-bottom: 5vw;
     }
 
-    .footer {
-        line-height: 5vw;
-        font-size: 3vw;
-        height: 20vw;
-    }
-
     .error-page {
         height: 100vw;
-        padding: 50vw 10vw;
+        padding: 20vw 10vw;
     }
 
     .error-title {

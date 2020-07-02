@@ -2,12 +2,8 @@
 
 const globalLoading = document.querySelector('.loading-animation');
 const table = document.querySelector('.table-data .table table');
-startLoadingAnimation(globalLoading);
-let loading = 0;
 
 (async function getGLobalData() {
-    try {
-        // fecthing
         const globalPositif = await getGlobalPositif();
         const globalRecovered = await getGlobalRecovered();
         const globalDeaths = await getGlobalDeaths();
@@ -17,18 +13,31 @@ let loading = 0;
         updateIndoData(indoData);
         updateUIGlobal(globalPositif, globalRecovered, globalDeaths, indoCase);
         // finish
-        if(loading == 2) {
-            startLoadingAnimation(globalLoading);
-            table.style.display = 'table';
-        }
-    } catch(err) {
-        startLoadingAnimation(globalLoading);
-        alert(err);
-        const body = document.querySelector('.container');
-        const errorPage = document.querySelector('.error-page');
-        body.style.display = 'none';
-        errorPage.style.display = 'block';
-    }
+        table.style.display = 'table';
+
+    // try {
+    //     // fecthing
+    //     const globalPositif = await getGlobalPositif();
+    //     const globalRecovered = await getGlobalRecovered();
+    //     const globalDeaths = await getGlobalDeaths();
+    //     const indoCase = await getIndoCase();
+    //     const indoData = await getProvData();
+    //     // updateUI
+    //     updateIndoData(indoData);
+    //     updateUIGlobal(globalPositif, globalRecovered, globalDeaths, indoCase);
+    //     // finish
+    //     if(loading == 2) {
+    //         startLoadingAnimation(globalLoading);
+    //         table.style.display = 'table';
+    //     }
+    // } catch(err) {
+    //     startLoadingAnimation(globalLoading);
+    //     alert(err);
+    //     const body = document.querySelector('.container');
+    //     const errorPage = document.querySelector('.error-page');
+    //     body.style.display = 'none';
+    //     errorPage.style.display = 'block';
+    // }
 })();
 
 
@@ -58,7 +67,6 @@ selectWilayah.addEventListener('change', async function(e) {
             const provData = await getSulteng();
             updateSubData(provData);
         } catch(err) {
-            alert(err);
             const body = document.querySelector('.container');
             const errorPage = document.querySelector('.error-page');
             body.style.display = 'none';
@@ -188,21 +196,3 @@ function updateSubData(provData) {
     subDataContainer.innerHTML += provCards;
     
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
