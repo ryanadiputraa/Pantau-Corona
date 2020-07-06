@@ -1,0 +1,28 @@
+.indonesia {
+  .card {
+    padding: 20px;
+  }
+}
+
+table, th, td {
+  border: 1px solid $black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+  
+  th {
+    padding: 6px;
+    background-color: $black;
+    color: $white;
+  }
+
+  th:first-child {
+    width: 40px;
+  }
+
+  .th-data {
+    width: 240px;
+  }
+}
