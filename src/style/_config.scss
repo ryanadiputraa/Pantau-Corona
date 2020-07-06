@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+$red: #fd1818;
+$white: #fff;
+$black: #1c1f1c;
+$green: #15fd15;
+$blue: #1818fd;
+$background: #f8f8ff;
+$shadow: #4f4a4a;
+
+.content {
+  padding: 8px 5%;
+  background-color: $background;
+}
+
+.card {
+  background-color: $white;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px 0;
+  box-shadow: 0 0 10px .5px $shadow;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 32px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px $shadow;
+}
+
+.card-title {
+  font-weight: 500;
+}
+
+.red-text {
+  color: $red;
+}

@@ -1,0 +1,71 @@
+.global-total-case,
+.global-total-recovered,
+.global-total-death,
+.indonesia-case {
+  transition: .3s;
+  display: inline-block;
+  width: 22%;
+  height: 100px;
+  box-shadow: 0 8px 2px -4px $shadow;
+  color: $white;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px $black;
+  text-align: center;
+
+  .card-title {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+
+    p, h3 {
+      display: inline-block;
+      font-size: 24px;
+    }
+
+    img {
+      height: 20px;
+    }
+  }
+
+  &:hover {
+    transition: .3s;
+    transform: scale(1.1);
+    box-shadow: none;
+  }
+}
+
+.global-total-case {
+  background-color: $blue;
+
+  &:hover {
+    background-color: #00f;
+  }
+}
+
+.global-total-recovered {
+  background-color: $green;
+
+  &:hover {
+    background-color: #0f0;
+  }
+}
+
+.global-total-death {
+  background-color: $red;
+
+  &:hover {
+    background-color: #f00;
+  }
+}
+
+.indonesia-case {
+  background-color: $black;
+
+  .card-title {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    background-color: #000;
+  }
+}

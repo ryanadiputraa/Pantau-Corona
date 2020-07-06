@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.content {
+  padding: 8px 5%;
+  background-color: #f8f8ff;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px 0;
+  -webkit-box-shadow: 0 0 10px 0.5px #4f4a4a;
+          box-shadow: 0 0 10px 0.5px #4f4a4a;
+}
+
+.title {
+  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 32px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px #4f4a4a;
+}
+
+.card-title {
+  font-weight: 500;
+}
+
+.red-text {
+  color: #fd1818;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1c1f1c;
+  color: #fff;
+  font-size: 24px;
+  padding: 0 10%;
+  border-bottom: 2px solid #fd1818;
+}
+
+header img {
+  width: 70%;
+}
+
+header select {
+  font-size: 24px;
+  border-radius: 6px;
+}
+
+.global-total-case,
+.global-total-recovered,
+.global-total-death,
+.indonesia-case {
+  -webkit-transition: .3s;
+  transition: .3s;
+  display: inline-block;
+  width: 22%;
+  height: 100px;
+  -webkit-box-shadow: 0 8px 2px -4px #4f4a4a;
+          box-shadow: 0 8px 2px -4px #4f4a4a;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 0 1px 2px #1c1f1c;
+  text-align: center;
+}
+
+.global-total-case .card-title,
+.global-total-recovered .card-title,
+.global-total-death .card-title,
+.indonesia-case .card-title {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.global-total-case .card-title p, .global-total-case .card-title h3,
+.global-total-recovered .card-title p,
+.global-total-recovered .card-title h3,
+.global-total-death .card-title p,
+.global-total-death .card-title h3,
+.indonesia-case .card-title p,
+.indonesia-case .card-title h3 {
+  display: inline-block;
+  font-size: 24px;
+}
+
+.global-total-case .card-title img,
+.global-total-recovered .card-title img,
+.global-total-death .card-title img,
+.indonesia-case .card-title img {
+  height: 20px;
+}
+
+.global-total-case:hover,
+.global-total-recovered:hover,
+.global-total-death:hover,
+.indonesia-case:hover {
+  -webkit-transition: .3s;
+  transition: .3s;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.global-total-case {
+  background-color: #1818fd;
+}
+
+.global-total-case:hover {
+  background-color: #00f;
+}
+
+.global-total-recovered {
+  background-color: #15fd15;
+}
+
+.global-total-recovered:hover {
+  background-color: #0f0;
+}
+
+.global-total-death {
+  background-color: #fd1818;
+}
+
+.global-total-death:hover {
+  background-color: #f00;
+}
+
+.indonesia-case {
+  background-color: #1c1f1c;
+}
+
+.indonesia-case .card-title {
+  margin-bottom: 0;
+}
+
+.indonesia-case:hover {
+  background-color: #000;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,28 @@
+{
+  "name": "pantau-corona",
+  "version": "2.0.0",
+  "description": "covid-19 datahub",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanadiputraa/Pantau-Corona.git"
+  },
+  "author": "Ryan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryanadiputraa/Pantau-Corona/issues"
+  },
+  "homepage": "https://github.com/ryanadiputraa/Pantau-Corona#readme",
+  "dependencies": {
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "css-loader": "^3.6.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.1",
+    "style-loader": "^1.2.1"
+  }
+}

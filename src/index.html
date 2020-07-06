@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Pantau Corona</title>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../dist/css/index.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">
+      <img src="./assets/logo.png" alt="site-logo">
+    </div>
+    <div class="search-bar">
+      <label for="section-data">Data Wilayah :</label>
+      <select name="section-data" id="section-data">
+        <option value="indonesia" selected>Indonesia</option>
+        <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+      </select>
+    </div>
+  </header>
+
+  <div class="content">
+    <div class="global-data">
+      <h2 class="title">Data Global Covid-19</h2>
+      <div class="card">
+        <div class="card global-total-case">
+          <div class="card-title">
+            <p>&#x1f637;</p>
+            <h3>Total Kasus</h3>
+          </div>
+          <div class="card-data">
+            <p>2.000.000</p>
+          </div>
+        </div>
+        <div class="card global-total-recovered">
+          <div class="card-title">
+            <p>&#x1f642;</p>
+            <h3>Sembuh</h3>
+          </div>
+          <div class="card-data">
+            <p>2.000.000</p>
+          </div>
+        </div>
+        <div class="card global-total-death">
+          <div class="card-title">
+            <p>&#x1f622;</p>
+            <h3>Meninggal</h3>
+          </div>
+          <div class="card-data">
+            <p>2.000.000</p>
+          </div>
+        </div>
+        <div class="card indonesia-case">
+          <div class="card-title">
+            <img src="./assets/indo-flag.png" alt="indonesia">
+            <h3><span class="red-text">Indo</span>nesia</h3>
+          </div>
+          <div class="card-data">
+            <p class="indo-total-case">Positif :</p>
+            <p class="indo-total-case">Sembuh :</p>
+            <p class="indo-total-case">Meninggal :</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
