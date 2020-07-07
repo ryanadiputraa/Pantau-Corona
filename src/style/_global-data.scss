@@ -14,7 +14,7 @@
   text-align: center;
 
   .card-title {
-    margin-bottom: 20px;
+    margin-bottom: 4px;
     text-transform: uppercase;
 
     p, h3 {
@@ -69,4 +69,18 @@
   &:hover {
     background-color: #000;
   }
+}
+
+.new-data {
+  display: inline-block;
+  width: 46%;
+  background-color: #8d8dff;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 4px;
+}
+
+.global-data {
+  font-size: 24px;
+  text-shadow: 0 1px 2px $black;
 }

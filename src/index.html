@@ -14,10 +14,9 @@
       <img src="./assets/logo.png" alt="site-logo">
     </div>
     <div class="search-bar">
-      <label for="section-data">Data Wilayah :</label>
+      <label for="section-data">Data Provinsi :</label>
       <select name="section-data" id="section-data">
-        <option value="indonesia" selected>Indonesia</option>
-        <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+        <option value="Sulawesi Tengah" selected>Sulawesi Tengah</option>
       </select>
     </div>
   </header>
@@ -35,7 +34,8 @@
             <h3>Total Kasus</h3>
           </div>
           <div class="card-data">
-            <p>2.000.000</p>
+            <p class="new-data">+</p>
+            <p class="total-confirmed global-data"></p>
           </div>
         </div>
         <div class="card global-total-recovered">
@@ -44,7 +44,8 @@
             <h3>Sembuh</h3>
           </div>
           <div class="card-data">
-            <p>2.000.000</p>
+            <p class="new-data">+</p>
+            <p class="total-recovered global-data"></p>
           </div>
         </div>
         <div class="card global-total-death">
@@ -53,7 +54,8 @@
             <h3>Meninggal</h3>
           </div>
           <div class="card-data">
-            <p>2.000.000</p>
+            <p class="new-data">+</p>
+            <p class="total-death global-data"></p>
           </div>
         </div>
         <div class="card indonesia-case">
@@ -62,9 +64,9 @@
             <h3><span class="red-text">Indo</span>nesia</h3>
           </div>
           <div class="card-data">
-            <p class="indo-total-case">Positif :</p>
-            <p class="indo-total-case">Sembuh :</p>
-            <p class="indo-total-case">Meninggal :</p>
+            <p class="indo-total-case">Positif : </p>
+            <p class="indo-total-recovered">Sembuh : </p>
+            <p class="indo-total-death">Meninggal : </p>
           </div>
         </div>
       </div>
