@@ -12,9 +12,11 @@ $green: #15fd15;
 $blue: #1818fd;
 $background: #f5f5ff;
 $shadow: #4f4a4a;
+$odd: #dfdfdf;
+$even: #adaddf;
 
 .content {
-  padding: 20px 5%;
+  padding: 20px 4%;
   background-color: $background;
 }
 
@@ -27,7 +29,7 @@ $shadow: #4f4a4a;
   align-items: center;
   justify-content: space-around;
   padding: 20px 0;
-  box-shadow: 0 0 10px .5px $shadow;
+  box-shadow: 0 4px 6px .5px $shadow;
 }
 
 .title {
@@ -44,4 +46,16 @@ $shadow: #4f4a4a;
 
 .red-text {
   color: $red;
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    font-size: 28px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 520px) {
+  .title {
+    text-align: center;
+  }
 }

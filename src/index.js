@@ -35,6 +35,34 @@ fetch(`${proxyurl}/${endpoint}/indonesia`)
     console.log('Request Failed', error);
   });
 
+// fetch indonesia region
+fetch(`${proxyurl}/${endpoint}/indonesia/provinsi`)
+  .then(status)
+  .then(json)
+  .then(data => {
+    const dataCase = []
+    for (let i = 0; i < data.length; i++) {
+      dataCase[i] = data[i].attributes;
+    }
+
+    let tableData = '';
+    for (let i = 0; i < dataCase.length; i++) {
+      tableData += `<tr align="center" >
+                      <td>${i + 1}</td>
+                      <td align="left">${dataCase[i].Provinsi}</td>
+                      <td>${dataCase[i].Kasus_Posi}</td>
+                      <td>${dataCase[i].Kasus_Semb}</td>
+                      <td>${dataCase[i].Kasus_Meni}</td>
+                  </tr>`
+    }
+    const table = document.querySelector('.indonesia-region');
+    table.innerHTML = tableData;
+  })
+  .catch(error => {
+    console.log('Request Failed', error);
+  });
+
+
 
 // fetch global
 fetch(`${globalEndpoint}`)

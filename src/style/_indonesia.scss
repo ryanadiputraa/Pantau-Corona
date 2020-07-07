@@ -25,4 +25,15 @@ table {
   .th-data {
     width: 240px;
   }
+
+  td {
+    padding: 4px 8px;
+  }
+
+  .td-odd {
+    background-color: $odd;
+  }
+  .td-even {
+    background-color: $even;
+  }
 }
