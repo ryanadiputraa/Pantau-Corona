@@ -36,7 +36,8 @@ module.exports = {
   plugins: [
     new htmlWebPackPlugin({
       template: './src/index.html',
-      filename: './index.html'
+      filename: './index.html',
+      favicon: './src/assets/indonesia.svg'
     }),
   ]
 }
