@@ -16,7 +16,7 @@ $odd: #fdfdfd;
 $even: #cdcdff;
 
 .content {
-  padding: 20px 4%;
+  padding: 0 4% 30px 4%;
   background-color: $background;
 }
 
@@ -34,6 +34,7 @@ $even: #cdcdff;
 
 .title {
   font-weight: 500;
+  padding-top: 20px;
   margin-bottom: 8px;
   font-size: 32px;
   text-transform: uppercase;

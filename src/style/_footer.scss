@@ -1,0 +1,27 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5%;
+  background-color: $black;
+  color: $white;
+  position: relative;
+  bottom: 0;
+  font-size: .7em;
+  
+  .source {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .footer-text {
+    width: 180%;
+  }
+  .source {
+    flex-direction: column;
+  }
+}

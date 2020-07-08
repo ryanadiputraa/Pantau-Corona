@@ -3,10 +3,10 @@ import './style/index.scss';
 const proxyurl = 'https://cors-anywhere.herokuapp.com';
 const endpoint = 'https://api.kawalcorona.com';
 const globalEndpoint = 'https://api.covid19api.com/summary';
+const sulteng = 'https://banuacoders.com/api/pico/kabupaten';
 
 // chaining promise
 const status = response => {
-  console.log('loading')
   if (response.status >= 200 && response.status < 300) {
     return Promise.resolve(response)
   } else {
@@ -18,7 +18,7 @@ const json = response => {
 }
 
 // fetch indonesia
-fetch(`${proxyurl}/${endpoint}/indonesia`, console.log(1 % 2))
+fetch(`${proxyurl}/${endpoint}/indonesia`)
   .then(status)
   .then(json)
   .then(data => {
@@ -86,6 +86,73 @@ fetch(`${globalEndpoint}`)
     totalRecovered.append(data.Global.TotalRecovered)
     totalDeath.append(data.Global.TotalDeaths)
 
+  })
+  .catch(error => {
+    console.log('Request Failed', error);
+  });
+
+
+fetch(`${proxyurl}/${endpoint}/indonesia/provinsi`)
+  .then(status)
+  .then(json)
+  .then(data => {
+    let tableData = '';
+    for (let i = 0; i < data.length; i++) {
+      i % 2 == 0 ? (
+        tableData += `<tr class="tr-odd" align="center" >
+                        <td>${i + 1}</td>
+                        <td align="left">${data[i].attributes.Provinsi}</td>
+                        <td>${data[i].attributes.Kasus_Posi}</td>
+                        <td>${data[i].attributes.Kasus_Semb}</td>
+                        <td>${data[i].attributes.Kasus_Meni}</td>
+                    </tr>`
+      ) : (
+          tableData += `<tr class="tr-even" align="center" >
+                        <td>${i + 1}</td>
+                        <td align="left">${data[i].attributes.Provinsi}</td>
+                        <td>${data[i].attributes.Kasus_Posi}</td>
+                        <td>${data[i].attributes.Kasus_Semb}</td>
+                        <td>${data[i].attributes.Kasus_Meni}</td>
+                    </tr>`
+        )
+    }
+    const table = document.querySelector('.indonesia-region');
+    table.innerHTML = tableData;
+  })
+  .catch(error => {
+    console.log('Request Failed', error);
+  });
+
+
+// sulteng
+fetch(`${proxyurl}/${sulteng}`)
+  .then(status)
+  .then(json)
+  .then(res => {
+    let tableData = '';
+    let tableNum = 1;
+    for (let i = (res.data.length - 1); i >= 0; i--) {
+      i % 2 == 0 ? (
+        tableData += `<tr class="tr-odd" align="center" >
+                        <td>${tableNum}</td>
+                        <td align="left">${res.data[i].kabupaten}</td>
+                        <td>${res.data[i].positif}</td>
+                        <td>${res.data[i].sembuh}</td>
+                        <td>${res.data[i].meninggal}</td>
+                    </tr>`
+      ) : (
+          tableData += `<tr class="tr-even" align="center" >
+                        <td>${tableNum}</td>
+                        <td align="left">${res.data[i].kabupaten}</td>
+                        <td>${res.data[i].positif}</td>
+                        <td>${res.data[i].sembuh}</td>
+                        <td>${res.data[i].meninggal}</td>
+                    </tr>`
+        )
+      tableNum++;
+    }
+    const table = document.querySelector('.indonesia-sub-region');
+    table.innerHTML = tableData;
   })
   .catch(error => {
     console.log('Request Failed', error);
