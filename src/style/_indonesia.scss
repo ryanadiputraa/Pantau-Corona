@@ -1,39 +1,52 @@
 .indonesia {
+  
   .card {
-    padding: 20px;
+    padding: .5em;
   }
 }
 
 table, th, td {
-  border: 1px solid $black;
   border-collapse: collapse;
+  font-size: 1em;
+  font-weight: 600
 }
 
 table {
   width: 100%;
   
   th {
-    padding: 6px;
+    padding: .4em;
     background-color: $black;
     color: $white;
   }
 
   th:first-child {
-    width: 40px;
+    width: 8%;
+  }
+
+  .th-state {
+    width: 45%;
   }
 
   .th-data {
-    width: 240px;
+    width: 17%;
+  }
+
+  .tr-odd {
+    background-color: $odd;
+  }
+  .tr-even {
+    background-color: $even;
   }
 
   td {
-    padding: 4px 8px;
+    padding: .4em;
   }
+}
 
-  .td-odd {
-    background-color: $odd;
-  }
-  .td-even {
-    background-color: $even;
+
+@media screen and (max-width: 400px) {
+  th, td {
+    font-size: .8em;
   }
 }

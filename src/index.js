@@ -6,20 +6,19 @@ const globalEndpoint = 'https://api.covid19api.com/summary';
 
 // chaining promise
 const status = response => {
+  console.log('loading')
   if (response.status >= 200 && response.status < 300) {
     return Promise.resolve(response)
   } else {
     return Promise.reject(new Error(response.statusText))
   }
 }
-
 const json = response => {
   return response.json()
 }
 
-
 // fetch indonesia
-fetch(`${proxyurl}/${endpoint}/indonesia`)
+fetch(`${proxyurl}/${endpoint}/indonesia`, console.log(1 % 2))
   .then(status)
   .then(json)
   .then(data => {
@@ -40,20 +39,25 @@ fetch(`${proxyurl}/${endpoint}/indonesia/provinsi`)
   .then(status)
   .then(json)
   .then(data => {
-    const dataCase = []
-    for (let i = 0; i < data.length; i++) {
-      dataCase[i] = data[i].attributes;
-    }
-
     let tableData = '';
-    for (let i = 0; i < dataCase.length; i++) {
-      tableData += `<tr align="center" >
-                      <td>${i + 1}</td>
-                      <td align="left">${dataCase[i].Provinsi}</td>
-                      <td>${dataCase[i].Kasus_Posi}</td>
-                      <td>${dataCase[i].Kasus_Semb}</td>
-                      <td>${dataCase[i].Kasus_Meni}</td>
-                  </tr>`
+    for (let i = 0; i < data.length; i++) {
+      i % 2 == 0 ? (
+        tableData += `<tr class="tr-odd" align="center" >
+                        <td>${i + 1}</td>
+                        <td align="left">${data[i].attributes.Provinsi}</td>
+                        <td>${data[i].attributes.Kasus_Posi}</td>
+                        <td>${data[i].attributes.Kasus_Semb}</td>
+                        <td>${data[i].attributes.Kasus_Meni}</td>
+                    </tr>`
+      ) : (
+          tableData += `<tr class="tr-even" align="center" >
+                        <td>${i + 1}</td>
+                        <td align="left">${data[i].attributes.Provinsi}</td>
+                        <td>${data[i].attributes.Kasus_Posi}</td>
+                        <td>${data[i].attributes.Kasus_Semb}</td>
+                        <td>${data[i].attributes.Kasus_Meni}</td>
+                    </tr>`
+        )
     }
     const table = document.querySelector('.indonesia-region');
     table.innerHTML = tableData;
