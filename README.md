@@ -1,14 +1,14 @@
-# pantau-corona
+# Pantau Corona
 
-Website to view Covid-19 global and indonesia data.
+Website to view Covid-19 global and indonesia data, using open API to fetch data.
 
 ## Technologies used
 
-> Webpack
-> SASS
+- Webpack
+- SASS
 
 ### API Source
 
-> https://api.kawalcorona.com
-> https://api.covid19api.com/summary
-> https://banuacoders.com/api/pico/kabupaten
+- https://api.kawalcorona.com
+- https://api.covid19api.com/summary
+- https://banuacoders.com/api/pico/kabupaten
