@@ -157,3 +157,55 @@ fetch(`${proxyurl}/${sulteng}`)
   .catch(error => {
     console.log('Request Failed', error);
   });
+
+
+// fetch option
+
+const sectionData = document.querySelector('#section-data');
+sectionData.addEventListener('change', e => {
+
+  if (innerWidth <= 600) {
+    scrollTo(0, 1300)
+  } else if (innerWidth <= 1024) {
+    scrollTo(0, 1650)
+  } else {
+    scrollTo(0, 1400)
+  }
+
+  if (e.target.value == 'Sulawesi Tengah') {
+    // sulteng
+    fetch(`${proxyurl}/${sulteng}`)
+      .then(status)
+      .then(json)
+      .then(res => {
+        let tableData = '';
+        let tableNum = 1;
+        for (let i = (res.data.length - 1); i >= 0; i--) {
+          i % 2 == 0 ? (
+            tableData += `<tr class="tr-odd" align="center" >
+                          <td>${tableNum}</td>
+                          <td align="left">${res.data[i].kabupaten}</td>
+                          <td>${res.data[i].positif}</td>
+                          <td>${res.data[i].sembuh}</td>
+                          <td>${res.data[i].meninggal}</td>
+                      </tr>`
+          ) : (
+              tableData += `<tr class="tr-even" align="center" >
+                          <td>${tableNum}</td>
+                          <td align="left">${res.data[i].kabupaten}</td>
+                          <td>${res.data[i].positif}</td>
+                          <td>${res.data[i].sembuh}</td>
+                          <td>${res.data[i].meninggal}</td>
+                      </tr>`
+            )
+          tableNum++;
+        }
+        const table = document.querySelector('.indonesia-sub-region');
+        table.innerHTML = tableData;
+      })
+      .catch(error => {
+        console.log('Request Failed', error);
+      });
+  }
+
+})

@@ -1,4 +1,8 @@
 .indonesia, .sub-region { 
+  .table-wrapper {
+    width: 100%;
+  }
+
   .card {
     padding: .5em;
   }
@@ -43,8 +47,24 @@ table {
   }
 }
 
+@media screen and (max-width: 425px) {
+  .indonesia, .sub-region {
+    .table-wrapper {
+      height: 400px;
+      overflow: scroll;
+    }
+    
+    thead {
+      position: absolute;
+      width: 88vw;
+      margin-top: -25px;
+    }
 
-@media screen and (max-width: 400px) {
+    table {
+      margin-top: 25px;
+    }
+  }
+
   th, td {
     font-size: .8em;
   }
