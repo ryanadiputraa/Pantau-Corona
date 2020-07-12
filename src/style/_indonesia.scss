@@ -23,16 +23,16 @@ table {
     color: $white;
   }
 
-  th:first-child {
-    width: 8%;
+  td-1 {
+    width: 2%;
   }
 
-  .th-state {
-    width: 45%;
+  .td-2 {
+    width: 38%;
   }
 
-  .th-data {
-    width: 17%;
+  .td-3 {
+    width: 20%;
   }
 
   .tr-odd {
@@ -67,5 +67,17 @@ table {
 
   th, td {
     font-size: .8em;
+  }
+}
+
+@media screen and (max-width: 389px) {
+  .sub-region {
+    table {
+      margin-top: 40px;
+    }
+
+    thead {
+      margin-top: -40px;
+    }
   }
 }

@@ -43,19 +43,19 @@ fetch(`${proxyurl}/${endpoint}/indonesia/provinsi`)
     for (let i = 0; i < data.length; i++) {
       i % 2 == 0 ? (
         tableData += `<tr class="tr-odd" align="center" >
-                        <td>${i + 1}</td>
-                        <td align="left">${data[i].attributes.Provinsi}</td>
-                        <td>${data[i].attributes.Kasus_Posi}</td>
-                        <td>${data[i].attributes.Kasus_Semb}</td>
-                        <td>${data[i].attributes.Kasus_Meni}</td>
+                        <td class="td-1">${i + 1}</td>
+                        <td align="left" class="td-2">${data[i].attributes.Provinsi}</td>
+                        <td class="td-3">${data[i].attributes.Kasus_Posi}</td>
+                        <td class="td-3">${data[i].attributes.Kasus_Semb}</td>
+                        <td class="td-3">${data[i].attributes.Kasus_Meni}</td>
                     </tr>`
       ) : (
           tableData += `<tr class="tr-even" align="center" >
-                        <td>${i + 1}</td>
-                        <td align="left">${data[i].attributes.Provinsi}</td>
-                        <td>${data[i].attributes.Kasus_Posi}</td>
-                        <td>${data[i].attributes.Kasus_Semb}</td>
-                        <td>${data[i].attributes.Kasus_Meni}</td>
+                        <td class="td-1">${i + 1}</td>
+                        <td align="left" class="td-2">${data[i].attributes.Provinsi}</td>
+                        <td class="td-3">${data[i].attributes.Kasus_Posi}</td>
+                        <td class="td-3">${data[i].attributes.Kasus_Semb}</td>
+                        <td class="td-3">${data[i].attributes.Kasus_Meni}</td>
                     </tr>`
         )
     }
@@ -92,37 +92,6 @@ fetch(`${globalEndpoint}`)
   });
 
 
-fetch(`${proxyurl}/${endpoint}/indonesia/provinsi`)
-  .then(status)
-  .then(json)
-  .then(data => {
-    let tableData = '';
-    for (let i = 0; i < data.length; i++) {
-      i % 2 == 0 ? (
-        tableData += `<tr class="tr-odd" align="center" >
-                        <td>${i + 1}</td>
-                        <td align="left">${data[i].attributes.Provinsi}</td>
-                        <td>${data[i].attributes.Kasus_Posi}</td>
-                        <td>${data[i].attributes.Kasus_Semb}</td>
-                        <td>${data[i].attributes.Kasus_Meni}</td>
-                    </tr>`
-      ) : (
-          tableData += `<tr class="tr-even" align="center" >
-                        <td>${i + 1}</td>
-                        <td align="left">${data[i].attributes.Provinsi}</td>
-                        <td>${data[i].attributes.Kasus_Posi}</td>
-                        <td>${data[i].attributes.Kasus_Semb}</td>
-                        <td>${data[i].attributes.Kasus_Meni}</td>
-                    </tr>`
-        )
-    }
-    const table = document.querySelector('.indonesia-region');
-    table.innerHTML = tableData;
-  })
-  .catch(error => {
-    console.log('Request Failed', error);
-  });
-
 
 // sulteng
 fetch(`${proxyurl}/${sulteng}`)
@@ -134,19 +103,19 @@ fetch(`${proxyurl}/${sulteng}`)
     for (let i = (res.data.length - 1); i >= 0; i--) {
       i % 2 == 0 ? (
         tableData += `<tr class="tr-odd" align="center" >
-                        <td>${tableNum}</td>
-                        <td align="left">${res.data[i].kabupaten}</td>
-                        <td>${res.data[i].positif}</td>
-                        <td>${res.data[i].sembuh}</td>
-                        <td>${res.data[i].meninggal}</td>
+                        <td class="td-1">${tableNum}</td>
+                        <td align="left" class="td-2">${res.data[i].kabupaten}</td>
+                        <td class="td-3">${res.data[i].positif}</td>
+                        <td class="td-3">${res.data[i].sembuh}</td>
+                        <td class="td-3">${res.data[i].meninggal}</td>
                     </tr>`
       ) : (
           tableData += `<tr class="tr-even" align="center" >
-                        <td>${tableNum}</td>
-                        <td align="left">${res.data[i].kabupaten}</td>
-                        <td>${res.data[i].positif}</td>
-                        <td>${res.data[i].sembuh}</td>
-                        <td>${res.data[i].meninggal}</td>
+                        <td class="td-1">${tableNum}</td>
+                        <td align="left" class="td-2">${res.data[i].kabupaten}</td>
+                        <td class="td-3">${res.data[i].positif}</td>
+                        <td class="td-3">${res.data[i].sembuh}</td>
+                        <td class="td-3">${res.data[i].meninggal}</td>
                     </tr>`
         )
       tableNum++;
@@ -183,19 +152,19 @@ sectionData.addEventListener('change', e => {
         for (let i = (res.data.length - 1); i >= 0; i--) {
           i % 2 == 0 ? (
             tableData += `<tr class="tr-odd" align="center" >
-                          <td>${tableNum}</td>
-                          <td align="left">${res.data[i].kabupaten}</td>
-                          <td>${res.data[i].positif}</td>
-                          <td>${res.data[i].sembuh}</td>
-                          <td>${res.data[i].meninggal}</td>
+                          <td class="td-1">${tableNum}</td>
+                          <td align="left" class="td-2">${res.data[i].kabupaten}</td>
+                          <td class="td-3">${res.data[i].positif}</td>
+                          <td class="td-3">${res.data[i].sembuh}</td>
+                          <td class="td-3">${res.data[i].meninggal}</td>
                       </tr>`
           ) : (
               tableData += `<tr class="tr-even" align="center" >
-                          <td>${tableNum}</td>
-                          <td align="left">${res.data[i].kabupaten}</td>
-                          <td>${res.data[i].positif}</td>
-                          <td>${res.data[i].sembuh}</td>
-                          <td>${res.data[i].meninggal}</td>
+                          <td class="td-1">${tableNum}</td>
+                          <td align="left" class="td-2">${res.data[i].kabupaten}</td>
+                          <td class="td-3">${res.data[i].positif}</td>
+                          <td class="td-3">${res.data[i].sembuh}</td>
+                          <td class="td-3">${res.data[i].meninggal}</td>
                       </tr>`
             )
           tableNum++;
