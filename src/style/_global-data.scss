@@ -37,6 +37,7 @@
 
 .global-total-case {
   background-color: $blue;
+  background-image: linear-gradient(45deg, #005, transparent);
 
   &:hover {
     background-color: #00f;
@@ -45,6 +46,7 @@
 
 .global-total-recovered {
   background-color: $green;
+  background-image: linear-gradient(-45deg, #050, transparent);
 
   &:hover {
     background-color: #1f3;
@@ -53,6 +55,7 @@
 
 .global-total-death {
   background-color: $red;
+  background-image: linear-gradient(45deg, #500, transparent);
 
   &:hover {
     background-color: #f00;
@@ -60,7 +63,8 @@
 }
 
 .indonesia-case {
-  background-color: $black;
+  background-color: $shadow;
+  background-image: linear-gradient(-45deg, #000, transparent);
 
   .card-title {
     margin-bottom: 0;
