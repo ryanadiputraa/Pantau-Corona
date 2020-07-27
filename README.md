@@ -1,6 +1,6 @@
 # Pantau Corona
 
-Website to view Covid-19 global and indonesia data, using open API to fetch data.
+Website to view Covid-19 global and indonesia data.
 
 ## Technologies used
 

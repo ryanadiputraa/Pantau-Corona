@@ -38,6 +38,10 @@ module.exports = {
     new htmlWebPackPlugin({
       template: './src/index.html',
       filename: 'index.html'
+    }),
+    new htmlWebPackPlugin({
+      template: './src/about.html',
+      filename: 'about.html'
     })
   ]
 }
