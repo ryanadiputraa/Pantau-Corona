@@ -50,14 +50,19 @@ $even: #cdcdff;
   font-weight: 700;
 }
 
-@media screen and (max-width: 400px) {
-  .title {
-    font-size: 28px;
-    text-align: center;
+@media screen and (max-width: 768px) {
+  .content {
+    padding-top: 60px;
   }
 }
 @media screen and (max-width: 520px) {
   .title {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 400px) {
+  .title {
+    font-size: 28px;
     text-align: center;
   }
 }

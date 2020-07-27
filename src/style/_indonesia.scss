@@ -23,7 +23,7 @@ table {
     color: $white;
   }
 
-  td-1 {
+  .td-1 {
     width: 2%;
   }
 
@@ -62,6 +62,12 @@ table {
 
     table {
       margin-top: 25px;
+    }
+    .td-2 {
+      width: 17%;
+    }
+    .td-3 {
+      width: 27%;
     }
   }
 
