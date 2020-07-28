@@ -1,0 +1,52 @@
+.layanan-title {
+  text-align: center;
+}
+
+.layanan {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  .card-title {
+    font-weight: 700;
+  }
+
+  .card {
+    width: 30%;
+    height: 140px;
+    font-weight: 500;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    margin-bottom: 40px;
+    transition: .5s;
+
+    &:hover {
+      transition: .5s;
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    .contact {
+      letter-spacing: .1em;
+      font-weight: 600;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .layanan {
+    .card {
+      width: 40%;
+    }
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .layanan {
+    .card {
+      width: 100%;
+    }
+  }
+}

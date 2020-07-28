@@ -193,6 +193,7 @@ class ResponsiveHeader extends HTMLElement {
       <nav>
         <ul type="none">
           <li><a href="${this.href[1]}">${this.links[0]}</a></li>
+          <li><a href="${this.href[2]}">${this.links[1]}</a></li>
         </ul>
       </nav>
     </header>

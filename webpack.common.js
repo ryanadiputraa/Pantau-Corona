@@ -40,8 +40,12 @@ module.exports = {
       filename: 'index.html'
     }),
     new htmlWebPackPlugin({
-      template: './src/about.html',
-      filename: 'about.html'
+      template: './src/covid-19.html',
+      filename: 'covid-19.html'
+    }),
+    new htmlWebPackPlugin({
+      template: './src/layanan.html',
+      filename: 'layanan.html'
     })
   ]
 }

@@ -50,7 +50,7 @@ table {
 @media screen and (max-width: 425px) {
   .indonesia, .sub-region {
     .table-wrapper {
-      height: 400px;
+      height: 440px;
       overflow: scroll;
     }
     
@@ -64,26 +64,14 @@ table {
       margin-top: 25px;
     }
     .td-2 {
-      width: 17%;
+      width: 26%;
     }
     .td-3 {
-      width: 27%;
+      width: 24%;
     }
   }
 
   th, td {
     font-size: .8em;
-  }
-}
-
-@media screen and (max-width: 389px) {
-  .sub-region {
-    table {
-      margin-top: 40px;
-    }
-
-    thead {
-      margin-top: -40px;
-    }
   }
 }
