@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "covid-19 datahub",
   "main": "index.js",
-  "keywords" = ["freecodecamp", "covid"]
+  "keywords": ["freecodecamp", "covid"],
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --config webpack.dev.js"
