@@ -18,6 +18,9 @@
     "url": "https://github.com/ryanadiputraa/Pantau-Corona/issues"
   },
   "homepage": "https://github.com/ryanadiputraa/Pantau-Corona#readme",
+  "dependencies": {
+    "moment": "2.14.0"
+   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
