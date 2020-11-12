@@ -13,9 +13,7 @@ const status = response => {
     return Promise.reject(new Error(response.statusText))
   }
 }
-const json = response => {
-  return response.json()
-}
+const json = response => response.json()
 
 // Indonesia
 fetch(`${proxyurl}/${endpoint}/indonesia`)
@@ -30,9 +28,7 @@ fetch(`${proxyurl}/${endpoint}/indonesia`)
   indoRecovered.append(data[0].sembuh);
   indoDeath.append(data[0].meninggal);
 })
-.catch(error => {
-  console.log('Request Failed', error);
-});
+.catch(error => alert('Request Failed', error));
 
 // Indonesia region
 fetch(`${proxyurl}/${endpoint}/indonesia/provinsi`)
@@ -62,14 +58,11 @@ fetch(`${proxyurl}/${endpoint}/indonesia/provinsi`)
   const table = document.querySelector('.indonesia-region');
   table.innerHTML = tableData;
 })
-.catch(error => {
-  console.log('Request Failed', error);
-});
-
+.catch(error => alert('Request Failed', error));
 
 
 // global
-fetch(`${globalEndpoint}`)
+fetch(globalEndpoint)
 .then(status)
 .then(json)
 .then(data => {
@@ -87,9 +80,7 @@ fetch(`${globalEndpoint}`)
   totalDeath.append(data.Global.TotalDeaths)
 
 })
-.catch(error => {
-  console.log('Request Failed', error);
-});
+.catch(error => alert('Request Failed', error));
 
 
 
@@ -123,6 +114,4 @@ fetch(`${proxyurl}/${sulteng}`)
   const table = document.querySelector('.indonesia-sub-region');
   table.innerHTML = tableData;
 })
-.catch(error => {
-  console.log('Request Failed', error);
-});
+.catch(error => alert('Request Failed', error));
