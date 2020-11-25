@@ -1,5 +1,7 @@
 # Pantau Corona
 
+- - live version : [`http://pantaucorona.netlify.app/`](http://pantaucorona.netlify.app/)
+
 Website to view Covid-19 global and indonesia data.
 
 ## Technologies used
